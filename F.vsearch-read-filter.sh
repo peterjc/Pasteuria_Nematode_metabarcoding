@@ -26,8 +26,16 @@ cd /home/jo42324/metabarcode/analysis/sequence-analysis/final-pipe/1_QC-and-asse
 
 # Filter the concatenated reads to exclude those with an expected error > 1 using vsearch (see https://doi.org/10.1093/bioinformatics/btv401 for an explanation of minimum expected error filtering)
 # Where possible, we have used vsearch because the underlying code is publicly available 
-vsearch --fastq_filter all-nem-amplicons.fastq --fastqout all-nem-amp-maxeefiltered.fastq --fastqout_discarded nem-failedexp-err-filter.fastq --fastq_maxee 1 --fastq_maxns 0
+vsearch --fastq_filter all-nem-amplicons.fastq \
+--fastqout all-nem-amp-maxeefiltered.fastq \
+--fastaout all-nem-amp-maxeefiltered.fasta \
+--fastqout_discarded nem-failedexp-err-filter.fastq \
+--fastq_maxee 1 --fastq_maxns 0
 
 wait
 
-vsearch --fastq_filter all-pas-amplicons.fastq --fastqout all-pas-amp-maxeefiltered.fastq --fastqout_discarded pas-failedexp-err-filter.fastq --fastq_maxee 1 --fastq_maxns 0
+vsearch --fastq_filter all-pas-amplicons.fastq \
+--fastqout all-pas-amp-maxeefiltered.fastq \
+--fastaout all-pas-amp-maxeefiltered.fasta \
+--fastqout_discarded pas-failedexp-err-filter.fastq \
+--fastq_maxee 1 --fastq_maxns 0
