@@ -1,4 +1,4 @@
-cd /home/jo42324/metabarcode/analysis/sequence-analysis/final-pipe/1_QC-and-assembly
+cd /home/jo42324/metabarcode/analysis/sequence-analysis/Pasteuria_Nematode_metabarcoding/QC-trimming-and-assembly
 
 # invoke the correct orientation python script
 python correct-orientation.py
