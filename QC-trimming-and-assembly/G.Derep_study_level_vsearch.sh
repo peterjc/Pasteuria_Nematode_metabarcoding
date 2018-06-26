@@ -3,7 +3,7 @@
 # Now that we have sorted and filtered our assembled reads (amplicons) we need to take all the amplicons binned (sorted into files for each primer pair) in the previous steps and de-replicate them at the study level (collapse all identical amplicons into a single record annotated with the total number of times it occurs). #
 
 # change into the directory where your binned and filtered fastq files are 
-cd /home/jo42324/metabarcode/analysis/sequence-analysis/final-pipe/1_QC-and-assembly
+cd /home/jo42324/metabarcode/analysis/sequence-analysis/Pasteuria_Nematode_metabarcoding/QC-trimming-and-assembly
   
 # invoke vsearch to dereplicate reads at the study level  
 vsearch --derep_fulllength all-pas-amp-maxeefiltered.fasta \
