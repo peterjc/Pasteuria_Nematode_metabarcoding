@@ -1,4 +1,4 @@
-cd /home/jo42324/metabarcode/analysis/sequence-analysis/final-pipe/1_QC-and-assembly
+cd /home/jo42324/metabarcode/analysis/sequence-analysis/Pasteuria_Nematode_metabarcoding/QC-trimming-and-assembly
 
 
 # Generate a QC report using FastQC for paired end Illumina read data 
