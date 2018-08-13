@@ -42,7 +42,7 @@ def cutprimers(input_hadle, fprimer, rprimer, minlen, maxlen, outfile1, outfile2
 			seqlen = len(frame)
 			
 			# if the size is correct...
-			if seqlen > minlen and seqlen < maxlen:
+			if seqlen >= minlen and seqlen <= maxlen:
 				outfile1.write(">%s\n%s\n" % (title, noprimframe))
 				
 			# If the product is too short...
