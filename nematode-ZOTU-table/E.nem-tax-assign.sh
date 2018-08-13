@@ -48,11 +48,8 @@ done
 
 cd combined_taxonomy/
 
-# Make a list of tax assignment handles, using -r to order them from best highest stringency to lowest (important)
-ls -r > tax_assignment_handles.txt
-
-# Remove the name of the file we just created from the list
-sed -i '/tax_assignment_handles.txt/d' tax_assignment_handles.txt
+# Make a list of tax assignment handles, order them from best highest stringency to lowest (important)
+ls *-tax-assignment.txt | sort -n -r > tax_assignment_handles.txt
 
 # Run the combine_tax_assignments script to genetate a single combined best match taxonomic assignment for each ZOTU
 python ../E.combine_tax_assignments.py
