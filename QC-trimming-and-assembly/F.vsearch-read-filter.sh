@@ -1,6 +1,6 @@
 #FASTQ filtering
 #  --fastq_filter FILENAME     filter FASTQ file, output to FASTQ or FASTA file
-#Options
+# Options
 #  --eeout                     include expected errors in FASTQ filter output
 #  --fastaout FILENAME         FASTA output filename for nemsed sequences
 #  --fastaout_discarded FNAME  FASTA filename for discarded sequences
@@ -20,15 +20,18 @@
 #  --relabel_sha1              relabel filtered sequences with sha1 digest
 #  --sizeout                   include abundance information when relabelling
 #  --xsize                     strip abundance information in output
- 
- 
+
 cd /home/jo42324/metabarcode/analysis/sequence-analysis/Pasteuria_Nematode_metabarcoding/QC-trimming-and-assembly
 
-# Filter the concatenated reads to exclude those with an expected error > 1 using vsearch (see https://doi.org/10.1093/bioinformatics/btv401 for an explanation of minimum expected error filtering)
-# Where possible, we have used vsearch because the underlying code is publicly available 
+# Filter the concatenated reads to exclude those
+# with an expected error > 1 using vsearch
+# see https://doi.org/10.1093/bioinformatics/btv401
+# for an explanation of minimum expected error filtering)
+
+# Where possible, we have used vsearch
+# because the underlying code is publicly available
 vsearch --fastq_filter all-nem-amplicons.fastq \
 --fastqout all-nem-amp-maxeefiltered.fastq \
---fastaout all-nem-amp-maxeefiltered.fasta \
 --fastqout_discarded nem-failedexp-err-filter.fastq \
 --fastq_maxee 1 --fastq_maxns 0
 
@@ -36,6 +39,5 @@ wait
 
 vsearch --fastq_filter all-pas-amplicons.fastq \
 --fastqout all-pas-amp-maxeefiltered.fastq \
---fastaout all-pas-amp-maxeefiltered.fasta \
 --fastqout_discarded pas-failedexp-err-filter.fastq \
 --fastq_maxee 1 --fastq_maxns 0
