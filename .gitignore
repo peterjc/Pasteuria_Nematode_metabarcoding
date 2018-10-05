@@ -1,0 +1,9 @@
+# Ignore data files
+*.fasta
+*.fastq
+*.fna
+
+# In general we don't want to track *.txt or *.csv either
+*.txt
+*.csv
+
