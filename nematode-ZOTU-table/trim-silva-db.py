@@ -77,6 +77,7 @@ Silva_tax_map_trimmed = open("Silva_108_taxa_mapping_trimmed.txt", "w")
 
 # Create an empty dictionary of sequence names
 name_dict = {}
+not_matched = open("not_matched_tax.txt", "w")
 
 # For each line in the taxa mapping file 
 for line in Silva_tax_map: 
@@ -98,3 +99,6 @@ for title, seq in SimpleFastaParser(Trimmed_silva_fa):
 			# write the sequence ID and tax record to the trimmed taxa file
 			name = name.rstrip("\n")
 			Silva_tax_map_trimmed.write("%s%s\n" % (name, tax))
+		else:
+			name = name.rstrip("\n")
+			not_matched.write("%s%s\n" % (name, tax))
