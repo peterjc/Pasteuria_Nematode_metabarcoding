@@ -32,6 +32,7 @@ cd /home/jo42324/metabarcode/analysis/sequence-analysis/Pasteuria_Nematode_metab
 # because the underlying code is publicly available
 vsearch --fastq_filter all-nem-amplicons.fastq \
 --fastqout all-nem-amp-maxeefiltered.fastq \
+--fastaout all-nem-amp-maxeefiltered.fasta \
 --fastqout_discarded nem-failedexp-err-filter.fastq \
 --fastq_maxee 1 --fastq_maxns 0
 
@@ -39,5 +40,6 @@ wait
 
 vsearch --fastq_filter all-pas-amplicons.fastq \
 --fastqout all-pas-amp-maxeefiltered.fastq \
+--fastaout all-pas-amp-maxeefiltered.fasta \
 --fastqout_discarded pas-failedexp-err-filter.fastq \
 --fastq_maxee 1 --fastq_maxns 0
